@@ -3,7 +3,7 @@ library(readxl)
 
 ### Graph 1
 
-housing_index2 <- read_excel("Documents/R/tabelas/housing_price_rents_index_eu.xlsx",
+housing_index2 <- read_excel("/Users/wemigliari/Documents/R/tabelas/housing_price_rents_index_eu.xlsx",
                              sheet = "Housing Price Rents")
 
 cols.num <- c(2:11)
