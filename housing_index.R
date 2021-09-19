@@ -1,7 +1,7 @@
 
 library(tidyr)
 
-housing_index <- read_excel("Documents/R/tabelas/housing_index_eu.xlsx",
+housing_index <- read_excel("/Users/wemigliari/Documents/R/tabelas/housing_index_eu.xlsx",
                     sheet = "Housing Index")
 
 housing_index1 <- pivot_longer(housing_index, cols=2:21, names_to = "Years", values_to = "Values")
