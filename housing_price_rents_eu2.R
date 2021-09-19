@@ -1,7 +1,7 @@
 library(dplyr)
 library(readxl)
 
-housing_index2 <- read_excel("Documents/R/tabelas/housing_price_rents_index_eu.xlsx",
+housing_index2 <- read_excel("/Users/wemigliari/Documents/R/tabelas/housing_price_rents_index_eu.xlsx",
                              sheet = "Housing Price Rents")
 
 ### Graph 2
