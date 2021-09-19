@@ -3,7 +3,7 @@ library(readxl)
 
 ### Graph 3
 
-inflation <- read_excel("Documents/R/tabelas/inflation_rates_eu.xlsx",
+inflation <- read_excel("/Users/wemigliari/Documents/R/tabelas/inflation_rates_eu.xlsx",
                         sheet = "Inflation Rate")
 
 library(tibble)
