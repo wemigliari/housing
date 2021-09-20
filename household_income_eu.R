@@ -1,18 +1,20 @@
-
+library(ggplot2)
 library(tibble)
 library(RColorBrewer)
 library(dplyr)
+library(tidyr)
 library(stringr)
+library(readxl)
 
 ### Graph 4 Household income
 
-household_income <- read_excel("Documents/R/tabelas/household_income_eu.xlsx",
+household_income <- read_excel("/Users/wemigliari/Documents/R/tabelas/household_income_eu.xlsx",
                                sheet = "Household Income")
 
 household_income <- as.data.frame(household_income, na.rm=TRUE)
 
 cols.num_household <- c(2:11)
-household_income[cols.num_household] <- sapply(household_income[cols.num],as.numeric)
+household_income[cols.num_household] <- sapply(household_income[cols.num_household],as.numeric)
 
 household_income2<- pivot_longer(household_income, cols=2:11, names_to = "Years", values_to = "Values")
 household_income2 <- data.frame(household_income2)
