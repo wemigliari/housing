@@ -1,5 +1,13 @@
-
+library(ggplot2)
+library(tibble)
+library(RColorBrewer)
+library(dplyr)
 library(tidyr)
+library(stringr)
+library(readxl)
+library(viridis)
+library(hrbrthemes)
+library(Ipaper)
 
 housing_index <- read_excel("/Users/wemigliari/Documents/R/tabelas/housing_index_eu.xlsx",
                     sheet = "Housing Index")
@@ -12,24 +20,22 @@ housing_index1 <- pivot_longer(housing_index, cols=2:21, names_to = "Years", val
 
 housing_index1 %>%
   ggplot(aes(x = Years, y=Values, fill=Years), alpha = 90) +
-  geom_boxplot() +
+  geom_boxplot2(width = 0.8, width.errorbar = 0.5) +
   scale_fill_viridis(discrete = TRUE, alpha=0.4) +
-  geom_jitter(color="black", size=0.4, alpha=0.9) +
-  geom_boxplot() +
+  #geom_jitter(color="black", size=0.4, alpha=0.9) +
   theme_ipsum() +
   theme(
     legend.position="none",
     plot.title = element_text(size=11)
   ) +
   ggtitle("") +
-  labs(title = "Boxplots.Annual and Quarterly Growth Rates (Variation), 2001-2020", y = "Deflated Housing Price Index, European Union", caption = "Source: Eurostat. Elaborated by Migliari, W. (2021).") +
+  labs(title = "Boxplots. Annual and Quarterly Growth Rates (Variation), 2001-2020", y = "Deflated Housing Price Index, European Union", caption = "Source: Eurostat. Elaborated by Migliari, W. (2021).") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-  annotate(geom="text", x="2010", y=25, label="Housing Price Index, 2010 = 100", 
+  annotate(geom="text", x="2010", y=20, label="Housing Price Index, 2010 = 100", 
            angle = 90,
            size=3,
            color = "#3E3E3E") +
   geom_vline(xintercept="2010", linetype="dotted", color = "orange")
-
 
 ### Graph 1
 
